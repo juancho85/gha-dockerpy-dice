@@ -1,0 +1,16 @@
+name: 'Lanza los dados'
+description: 'Lanza uno o dos dados de 6 caras usando un contenedor docker con python.'
+inputs:
+  numero-dados:
+    required: true
+    type: string
+    default: dos
+    description: "El número de dados que se van a tirar. Valores aceptados: [uno, dos]"
+outputs:
+  dado1:
+    description: 'resultado de la tirada del primer dado'
+  dado2: 
+    description: 'resultado de la tirada del segundo dado'
+runs:
+  using: 'docker'
+  image: 'Dockerfile' # 'docker://debian:stretch-slim', si quisieramos apuntar a una imagen de dockerhub
